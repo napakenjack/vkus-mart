@@ -57,7 +57,7 @@ export const Header: React.FC = () => {
               className="flex items-center gap-3 cursor-pointer z-50 relative"
               onClick={() => { window.location.hash = ''; window.scrollTo(0,0); }}
             >
-              <img src="/public/images/logo-vkusmart.svg" alt="ВКУСМАРТ Лого" className="h-8 md:h-10 w-auto object-contain" />
+              <img src="/assets/img/vkusmart-logo.svg" alt="ВКУСМАРТ Лого" className="h-8 md:h-10 w-auto object-contain" />
             </div>
 
             {/* Desktop Nav */}
