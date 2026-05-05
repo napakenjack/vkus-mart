@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { useModal } from '../context/ModalContext';
 import { CTAButton } from './ui/CTAButton';
+import { logo } from '../assets/img/vkusmart-logo.svg;
 
 export const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -57,7 +58,7 @@ export const Header: React.FC = () => {
               className="flex items-center gap-3 cursor-pointer z-50 relative"
               onClick={() => { window.location.hash = ''; window.scrollTo(0,0); }}
             >
-              <img src="./assets/img/vkusmart-logo.svg" alt="ВКУСМАРТ Лого" className="h-8 md:h-10 w-auto object-contain" />
+              <img src="{logo}" alt="ВКУСМАРТ Лого" className="h-8 md:h-10 w-auto object-contain" />
             </div>
 
             {/* Desktop Nav */}
