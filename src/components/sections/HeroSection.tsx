@@ -4,6 +4,7 @@ import { Section } from '../ui/Section';
 import { CTAButton } from '../ui/CTAButton';
 import { ImagePlaceholder } from '../ui/ImagePlaceholder';
 import { useModal } from '../../context/ModalContext';
+import logoCircle from '../../assets/img/vkusmart-logo-circle.svg';
 
 export const HeroSection: React.FC = () => {
   const { openModal } = useModal();
@@ -104,7 +105,7 @@ export const HeroSection: React.FC = () => {
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 bg-white rounded-full flex items-center justify-center p-2 shadow-xl z-30 ring-8 ring-white/10"
           >
             <div className="w-full h-full border border-v-grey-light rounded-full flex items-center justify-center p-3">
-              <img src="/public/images/logo-vkusmart.svg" alt="Вкусмарт" className="w-full h-auto" />
+              <img src={logoCircle} alt="Вкусмарт" className="w-full h-auto" />
             </div>
           </motion.div>
         </motion.div>
