@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { useModal } from '../context/ModalContext';
 import { CTAButton } from './ui/CTAButton';
-import { logo } from '../assets/img/vkusmart-logo.svg;
+import logo from '../assets/img/vkusmart-logo.svg';
 
 export const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
