@@ -61,10 +61,10 @@ export const BrandSection: React.FC = () => {
         >
           <div className="rounded-[2rem] overflow-hidden col-span-2 row-span-1 shadow-2xl relative border border-white/10">
             <div className="absolute inset-0 bg-gradient-to-t from-v-burgundy/60 to-transparent z-10 w-full h-full pointer-events-none"></div>
-            <ImagePlaceholder src="/public/images/brand-interior.jpg" alt="Интерьер ВКУСМАРТ" className="hover:scale-105 transition-transform duration-700 w-full h-full object-cover" />
+            <ImagePlaceholder src="https://images.unsplash.com/photo-1581515286576-96dd6dc9dfa7?auto=format&fit=crop&q=80&w=1200" alt="Интерьер ВКУСМАРТ" className="hover:scale-105 transition-transform duration-700 w-full h-full object-cover" />
           </div>
           <div className="rounded-[2rem] overflow-hidden shadow-xl border border-white/10">
-             <ImagePlaceholder src="/public/images/brand-light.jpg" alt="Архитектурный свет" className="hover:scale-105 transition-transform duration-700 w-full h-full object-cover" />
+             <ImagePlaceholder src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" alt="Архитектурный свет" className="hover:scale-105 transition-transform duration-700 w-full h-full object-cover" />
           </div>
           <div className="rounded-[2rem] border border-white/10 overflow-hidden shadow-xl bg-v-grey-light flex items-center justify-center p-8">
              <img src="/public/images/logo-vkusmart.svg" alt="ВКУСМАРТ Лого" className="w-3/4 max-w-[120px] object-contain opacity-90" />

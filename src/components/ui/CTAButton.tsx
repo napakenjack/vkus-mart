@@ -25,7 +25,7 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
     primary: "bg-v-red text-white shadow-[0_10px_30px_rgba(180,2,22,0.3)] hover:bg-v-burgundy active:scale-95 border border-v-burgundy/20",
     outline: "border-2 border-v-red text-v-red hover:bg-v-red hover:text-white active:scale-95",
     ghost: "text-v-red hover:bg-v-red/5 active:scale-95",
-    hero: "bg-v-white text-v-red hover:bg-v-cream active:scale-95"
+    hero: "bg-white text-v-red hover:bg-white/90 active:scale-95 shadow-[0_10px_30px_rgba(255,255,255,0.2)]"
   };
 
   const sizes = {

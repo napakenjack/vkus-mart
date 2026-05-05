@@ -58,9 +58,6 @@ export const Header: React.FC = () => {
               onClick={() => { window.location.hash = ''; window.scrollTo(0,0); }}
             >
               <img src="/public/images/logo-vkusmart.svg" alt="ВКУСМАРТ Лого" className="h-8 md:h-10 w-auto object-contain" />
-              <span className={`font-bold text-[28px] tracking-tight uppercase hidden sm:block ${scrolled ? 'text-v-red' : 'text-v-burgundy'}`}>
-                ВКУСМАРТ
-              </span>
             </div>
 
             {/* Desktop Nav */}

@@ -67,7 +67,7 @@ export const FormatsSection: React.FC = () => {
           </div>
           
           <div className="h-[300px] md:h-auto order-1 lg:order-2">
-            <ImagePlaceholder src="/public/images/daily-1.jpg" alt="Daily Формат" className="w-full h-full object-cover" />
+            <ImagePlaceholder src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800" alt="Daily Формат" className="w-full h-full object-cover" />
           </div>
         </div>
       </motion.div>
@@ -82,7 +82,7 @@ export const FormatsSection: React.FC = () => {
           className="bg-v-cream rounded-3xl p-8 border border-v-grey-light/50 shadow-sm flex flex-col"
         >
           <div className="mb-6 h-[180px] rounded-xl overflow-hidden shadow-card">
-             <ImagePlaceholder src="/public/images/super-1.jpg" alt="Super Формат" className="w-full h-full object-cover" />
+             <ImagePlaceholder src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&q=80&w=800" alt="Super Формат" className="w-full h-full object-cover" />
           </div>
           <h3 className="text-2xl font-bold text-v-burgundy mb-4">SUPER</h3>
           <p className="text-v-muted text-xs mb-6 font-medium leading-relaxed">
@@ -112,7 +112,7 @@ export const FormatsSection: React.FC = () => {
           className="bg-v-cream rounded-3xl p-8 border border-v-grey-light/50 shadow-sm flex flex-col"
         >
           <div className="mb-6 h-[180px] rounded-xl overflow-hidden shadow-card">
-             <ImagePlaceholder src="/public/images/hyper-1.jpg" alt="Hyper Формат" className="w-full h-full object-cover" />
+             <ImagePlaceholder src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&q=80&w=800" alt="Hyper Формат" className="w-full h-full object-cover" />
           </div>
           <h3 className="text-2xl font-bold text-v-burgundy mb-4">HYPER</h3>
           <p className="text-v-muted text-xs mb-6 font-medium leading-relaxed">

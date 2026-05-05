@@ -16,7 +16,6 @@ export const Footer: React.FC = () => {
         >
           Политика конфиденциальности
         </a>
-        <a href="#" className="hover:text-white transition-colors">Презентация .PDF</a>
         <a href="#" className="hover:text-white transition-colors">Instagram</a>
       </div>
     </footer>

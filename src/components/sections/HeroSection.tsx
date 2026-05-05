@@ -77,7 +77,7 @@ export const HeroSection: React.FC = () => {
         >
           {/* Main big image (circle) */}
           <div className="absolute inset-0 right-10 bottom-20 rounded-full overflow-hidden card-shadow bg-v-grey-light border-4 border-v-burgundy/10">
-            <ImagePlaceholder src="/public/images/hero-interior-1.jpg" alt="Интерьер ВКУСМАРТ" className="w-full h-full object-cover" />
+            <ImagePlaceholder src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&q=80&w=800" alt="Интерьер ВКУСМАРТ" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-v-red-dark/10 mix-blend-multiply"></div>
           </div>
           
@@ -86,7 +86,7 @@ export const HeroSection: React.FC = () => {
             whileHover={{ y: -5 }}
             className="absolute top-10 right-0 w-[45%] h-[40%] rounded-[2rem] overflow-hidden border-4 border-v-burgundy shadow-2xl z-20 bg-v-grey-light"
           >
-            <ImagePlaceholder src="/public/images/hero-interior-2.jpg" alt="Витрина" className="w-full h-full object-cover" />
+            <ImagePlaceholder src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&q=80&w=800" alt="Витрина" className="w-full h-full object-cover" />
           </motion.div>
           
           {/* Bottom left image - Employee (circular) */}
@@ -94,7 +94,7 @@ export const HeroSection: React.FC = () => {
             whileHover={{ y: -5 }}
             className="absolute bottom-0 left-[-20px] w-[50%] aspect-square rounded-full overflow-hidden border-4 border-v-burgundy shadow-2xl z-20 bg-v-grey-light"
           >
-            <ImagePlaceholder src="/public/images/employee.jpg" alt="Сотрудник ВКУСМАРТ" className="w-full h-full object-cover" />
+            <ImagePlaceholder src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800" alt="Сотрудник ВКУСМАРТ" className="w-full h-full object-cover" />
           </motion.div>
 
           {/* Floating Circle Badge */}
