@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-v-green-deep: #163B2B;
+  --color-v-green-fresh: #38A169;
+  --color-v-cream: #F7F3EA;
+  --color-v-sand: #ECE2D0;
+  --color-v-charcoal: #151515;
+  --color-v-text-muted: #5E625C;
+  --color-v-accent: #F2B84B;
+
+  --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@layer base {
+  body {
+    @apply bg-v-cream text-v-charcoal font-sans antialiased overflow-x-hidden selection:bg-v-accent selection:text-v-charcoal;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight;
+  }
+
+  /* Custom scrollbar for a premium feel */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-v-cream);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-v-sand);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-v-green-deep);
+  }
+
+  /* Focus outline styles for accessibility */
+  *:focus-visible {
+    outline: 2px solid var(--color-v-green-fresh);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .glass-header {
+    @apply bg-v-cream/95 backdrop-blur-md border-b border-v-sand/40;
+  }
+  .card-shadow {
+    box-shadow: 0 4px 24px -6px rgba(22, 59, 43, 0.05), 0 0 1px rgba(22, 59, 43, 0.1);
+  }
+  .image-placeholder-gradient {
+    background: linear-gradient(135deg, var(--color-v-sand) 0%, var(--color-v-cream) 100%);
+  }
+  .dark-overlay {
+    background: linear-gradient(180deg, rgba(21, 21, 21, 0.05) 0%, rgba(21, 21, 21, 0.8) 100%);
+  }
+}
