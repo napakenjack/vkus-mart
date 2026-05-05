@@ -1,28 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Istok Web", Arial, sans-serif;
+  --font-body: "Istok Web", Arial, sans-serif;
 
-  --color-v-green-deep: #163B2B;
-  --color-v-green-fresh: #38A169;
-  --color-v-cream: #F7F3EA;
-  --color-v-sand: #ECE2D0;
-  --color-v-charcoal: #151515;
-  --color-v-text-muted: #5E625C;
-  --color-v-accent: #F2B84B;
+  --color-v-burgundy: #80011F;
+  --color-v-red: #B40216;
+  --color-v-red-dark: #A60F1C;
+  --color-v-red-soft: #C4394D;
+  --color-white: #FFFFFF;
+  --color-v-grey-light: #E3E7EC;
+  --color-v-ivory: #FFFFE4;
+  --color-v-cream: #FDF9EE;
+
+  --color-v-green: #628B35;
+  --color-v-green-soft: #91B77E;
+  --color-v-blue-dark: #003866;
+  --color-v-orange: #E16510;
+  --color-v-gold: #EDB710;
+  --color-v-yellow-soft: #FFFF92;
+
+  --color-v-text: #151515;
+  --color-v-muted: #5E5E5E;
+
+  /* Aliasing old variables to new brand colors to avoid breaking everything before manual replacements */
+  --color-v-green-deep: var(--color-v-burgundy);
+  --color-v-green-fresh: var(--color-v-red);
+  --color-v-sand: var(--color-v-ivory);
+  --color-v-charcoal: var(--color-v-text);
+  --color-v-text-muted: var(--color-v-muted);
+  --color-v-accent: var(--color-v-gold);
 
   --animate-fade-in-up: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @layer base {
   body {
-    @apply bg-v-cream text-v-charcoal font-sans antialiased overflow-x-hidden selection:bg-v-accent selection:text-v-charcoal;
+    @apply bg-v-cream text-v-text font-sans antialiased overflow-x-hidden selection:bg-v-gold selection:text-v-text;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tight;
+    @apply tracking-tighter;
   }
 
   /* Custom scrollbar for a premium feel */
@@ -33,16 +52,16 @@
     background: var(--color-v-cream);
   }
   ::-webkit-scrollbar-thumb {
-    background: var(--color-v-sand);
+    background: var(--color-v-grey-light);
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-v-green-deep);
+    background: var(--color-v-red-dark);
   }
 
   /* Focus outline styles for accessibility */
   *:focus-visible {
-    outline: 2px solid var(--color-v-green-fresh);
+    outline: 2px solid var(--color-v-red);
     outline-offset: 2px;
   }
 }
@@ -52,13 +71,13 @@
     text-wrap: balance;
   }
   .glass-header {
-    @apply bg-v-cream/95 backdrop-blur-md border-b border-v-sand/40;
+    @apply bg-v-cream/95 backdrop-blur-md border-b border-v-grey-light/40;
   }
   .card-shadow {
-    box-shadow: 0 4px 24px -6px rgba(22, 59, 43, 0.05), 0 0 1px rgba(22, 59, 43, 0.1);
+    box-shadow: 0 14px 40px rgba(21, 21, 21, 0.08); /* --shadow-card */
   }
   .image-placeholder-gradient {
-    background: linear-gradient(135deg, var(--color-v-sand) 0%, var(--color-v-cream) 100%);
+    background: linear-gradient(135deg, var(--color-v-ivory) 0%, var(--color-v-cream) 100%);
   }
   .dark-overlay {
     background: linear-gradient(180deg, rgba(21, 21, 21, 0.05) 0%, rgba(21, 21, 21, 0.8) 100%);

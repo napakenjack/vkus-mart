@@ -23,12 +23,12 @@ export const SupportSection: React.FC = () => {
   ];
 
   return (
-    <Section id="support" className="bg-white">
+    <Section id="support" className="bg-v-cream">
       <div className="max-w-4xl mx-auto text-center mb-16 md:mb-20">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-v-green-deep mb-6 tracking-tight text-balance">
+        <h2 className="text-4xl md:text-5xl font-bold text-v-red-dark mb-6 tracking-tight text-balance">
           Вы не открываете магазин в одиночку
         </h2>
-        <p className="text-lg md:text-xl text-v-text-muted font-medium text-pretty leading-relaxed">
+        <p className="text-lg md:text-xl text-v-muted font-medium text-pretty leading-relaxed">
           Мы не просто передаём права на франшизу — мы полноценно участвуем в запуске и стратегическом развитии вашего бизнеса.
         </p>
       </div>
@@ -41,15 +41,15 @@ export const SupportSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: idx * 0.15 }}
-            className="group flex flex-col p-10 bg-v-sand/10 rounded-3xl border border-v-sand/50 hover:bg-v-cream hover:border-v-sand transition-all duration-300"
+            className="group flex flex-col p-10 bg-white rounded-[2rem] border border-v-grey-light/60 hover:shadow-card transition-all duration-300"
           >
-            <div className="w-16 h-16 bg-white rounded-2xl shadow-sm border border-v-sand/40 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-500">
-              {card.icon}
+            <div className="w-16 h-16 bg-v-ivory rounded-full border border-v-gold/20 flex items-center justify-center mb-8 group-hover:bg-v-red group-hover:text-white transition-colors duration-500">
+              {React.cloneElement(card.icon as React.ReactElement, { className: "w-7 h-7 text-v-red-dark group-hover:text-white transition-colors duration-500" })}
             </div>
-            <h3 className="text-xl font-bold text-v-charcoal mb-4 leading-tight">
+            <h3 className="text-xl font-bold text-v-text mb-4 leading-tight">
               {card.title}
             </h3>
-            <p className="text-v-text-muted leading-relaxed">
+            <p className="text-v-muted text-sm leading-relaxed">
               {card.text}
             </p>
           </motion.div>

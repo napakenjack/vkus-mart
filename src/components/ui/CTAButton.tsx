@@ -4,7 +4,7 @@ import { cn } from '../../utils/cn';
 
 interface CTAButtonProps extends Omit<HTMLMotionProps<"button">, "onClick"> {
   children: React.ReactNode;
-  variant?: 'primary' | 'outline' | 'ghost';
+  variant?: 'primary' | 'outline' | 'ghost' | 'hero';
   size?: 'sm' | 'md' | 'lg';
   onClick?: () => void;
   fullWidth?: boolean;
@@ -22,10 +22,10 @@ export const CTAButton: React.FC<CTAButtonProps> = ({
   const baseStyles = "relative inline-flex items-center justify-center font-semibold transition-colors duration-300 ease-out overflow-hidden";
   
   const variants = {
-    primary: "bg-v-accent text-[#151515] shadow-lg hover:shadow-xl active:scale-95",
-    outline: "border-2 border-v-green-deep text-v-green-deep hover:bg-v-green-deep hover:text-white active:scale-95",
-    ghost: "text-v-green-deep hover:bg-v-green-deep/5 active:scale-95",
-    hero: "bg-v-green-deep text-white hover:bg-v-green-fresh active:scale-95"
+    primary: "bg-v-red text-white shadow-[0_10px_30px_rgba(180,2,22,0.3)] hover:bg-v-burgundy active:scale-95 border border-v-burgundy/20",
+    outline: "border-2 border-v-red text-v-red hover:bg-v-red hover:text-white active:scale-95",
+    ghost: "text-v-red hover:bg-v-red/5 active:scale-95",
+    hero: "bg-v-white text-v-red hover:bg-v-cream active:scale-95"
   };
 
   const sizes = {

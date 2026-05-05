@@ -10,17 +10,17 @@ export const AudienceSection: React.FC = () => {
 
   const audiences = [
     {
-      icon: <UserCog className="w-8 h-8 text-v-accent" />,
+      icon: <UserCog className="w-8 h-8 text-v-red" />,
       title: "Предпринимателям",
       text: "Которые хотят открыть собственный магазин и управлять бизнесом с понятной экономикой и жёсткой системой."
     },
     {
-      icon: <TrendingUp className="w-8 h-8 text-blue-500" />,
+      icon: <TrendingUp className="w-8 h-8 text-v-burgundy" />,
       title: "Инвесторам",
       text: "Которые хотят получать стабильный долгосрочный доход в ритейле и делегировать часть операционного управления."
     },
     {
-      icon: <Building2 className="w-8 h-8 text-v-green-fresh" />,
+      icon: <Building2 className="w-8 h-8 text-v-gold" />,
       title: "Владельцам помещений",
       text: "Которые хотят превратить свою простаивающую площадь в работающий, привлекательный и прибыльный бизнес."
     }
@@ -47,10 +47,10 @@ export const AudienceSection: React.FC = () => {
   return (
     <Section id="audience" className="bg-white">
       <div className="max-w-3xl mb-16 md:mb-20 text-center mx-auto">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-v-green-deep mb-6 tracking-tight text-balance">
+        <h2 className="text-4xl md:text-5xl font-bold text-v-text mb-6 tracking-tight text-balance">
           Кому подойдёт этот бизнес
         </h2>
-        <p className="text-lg text-v-text-muted font-medium text-pretty leading-relaxed">
+        <p className="text-lg text-v-muted font-medium text-pretty leading-relaxed">
           Формат ВКУСМАРТ подходит тем, кто хочет зарабатывать на системном ритейле — без типичных ошибок одиночных магазинов.
         </p>
       </div>
@@ -63,13 +63,13 @@ export const AudienceSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: idx * 0.1 }}
-            className="bg-v-cream p-8 md:p-10 rounded-3xl border border-v-sand/40 flex flex-col items-center text-center"
+            className="bg-v-cream p-8 md:p-10 rounded-[2rem] border border-v-grey-light flex flex-col items-center text-center shadow-sm hover:shadow-card transition-shadow"
           >
-            <div className="mb-6 bg-white w-16 h-16 rounded-2xl flex items-center justify-center shadow-sm border border-v-sand/50">
+            <div className="mb-6 bg-white w-16 h-16 rounded-full flex items-center justify-center shadow-sm border border-v-grey-light">
               {aud.icon}
             </div>
-            <h3 className="text-xl font-bold text-v-charcoal mb-4">{aud.title}</h3>
-            <p className="text-v-text-muted text-sm leading-relaxed font-medium">{aud.text}</p>
+            <h3 className="text-xl font-bold text-v-text mb-4">{aud.title}</h3>
+            <p className="text-v-muted text-sm leading-relaxed font-medium">{aud.text}</p>
           </motion.div>
         ))}
       </div>
@@ -80,31 +80,32 @@ export const AudienceSection: React.FC = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
         transition={{ duration: 0.8 }}
-        className="grid md:grid-cols-2 rounded-3xl overflow-hidden card-shadow bg-white"
+        className="grid md:grid-cols-2 rounded-[2rem] overflow-hidden shadow-card bg-white border border-v-grey-light"
       >
-        <div className="bg-red-50/50 p-8 md:p-12 border-b md:border-b-0 md:border-r border-red-100 flex flex-col">
-          <h3 className="text-2xl font-bold text-red-900 mb-8 leading-tight pr-4">
+        <div className="bg-v-cream p-8 md:p-12 border-b md:border-b-0 md:border-r border-v-grey-light flex flex-col">
+          <h3 className="text-2xl font-bold text-v-text/80 mb-8 leading-tight pr-4">
             Если вы уже открывали магазин, вы сталкивались с этим:
           </h3>
           <ul className="space-y-5 flex-grow">
             {painPoints.map((point, idx) => (
               <li key={idx} className="flex items-start gap-4">
-                <XCircle className="w-5 h-5 text-red-400 shrink-0 mt-0.5" />
-                <span className="text-v-charcoal/80 font-medium leading-relaxed">{point}</span>
+                <XCircle className="w-5 h-5 text-v-red-soft shrink-0 mt-0.5 opacity-80" />
+                <span className="text-v-muted font-medium leading-relaxed">{point}</span>
               </li>
             ))}
           </ul>
         </div>
         
-        <div className="bg-v-green-fresh/5 p-8 md:p-12 flex flex-col">
-          <h3 className="text-2xl font-bold text-v-green-deep mb-8 leading-tight pr-4">
+        <div className="bg-white p-8 md:p-12 flex flex-col relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-v-red/5 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+          <h3 className="text-2xl font-bold text-v-burgundy mb-8 leading-tight pr-4 relative z-10">
             Что меняется с партнёрством ВКУСМАРТ:
           </h3>
-          <ul className="space-y-5 flex-grow">
+          <ul className="space-y-5 flex-grow relative z-10">
             {solutions.map((point, idx) => (
               <li key={idx} className="flex items-start gap-4">
-                <CheckCircle2 className="w-5 h-5 text-v-green-fresh shrink-0 mt-0.5" />
-                <span className="text-v-charcoal font-medium leading-relaxed">{point}</span>
+                <CheckCircle2 className="w-5 h-5 text-v-green shrink-0 mt-0.5" />
+                <span className="text-v-text font-bold leading-relaxed">{point}</span>
               </li>
             ))}
           </ul>
@@ -112,7 +113,7 @@ export const AudienceSection: React.FC = () => {
       </motion.div>
 
       <div className="mt-16 max-w-3xl mx-auto text-center px-4">
-        <p className="text-xl font-bold text-v-charcoal mb-8 text-pretty leading-relaxed">
+        <p className="text-xl font-bold text-v-text mb-8 text-pretty leading-relaxed">
           Вы не повторяете ошибки одиночных магазинов — вы работаете по системе, которая уже доказала свою эффективность.
         </p>
         <CTAButton 

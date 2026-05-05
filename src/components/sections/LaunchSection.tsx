@@ -56,17 +56,18 @@ export const LaunchSection: React.FC = () => {
         
         {/* Sticky Left Text */}
         <div className="lg:sticky lg:top-32">
-          <div className="inline-flex items-center gap-2 bg-v-sand px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-v-green-deep mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-v-green-deep"></span> За 3 месяца
+          <div className="inline-flex items-center gap-2 bg-v-red/10 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-v-red-dark mb-8 border border-v-red/20 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-v-red-dark"></span> За 3 месяца
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-v-charcoal mb-6 tracking-tighter leading-tight text-balance">
+          <h2 className="text-4xl md:text-5xl font-bold text-v-text mb-6 tracking-tight leading-tight text-balance">
             Пошаговый запуск вашего магазина
           </h2>
-          <p className="text-sm text-v-text-muted font-medium text-pretty leading-relaxed mb-8 max-w-sm">
+          <p className="text-base text-v-muted font-medium text-pretty leading-relaxed mb-8 max-w-sm">
             Вы проходите весь путь не в одиночку — безопасный старт с сопровождением на каждом из 10 ключевых этапов.
           </p>
           <CTAButton 
             variant="outline" 
+            size="lg"
             onClick={() => openModal('launch_plan', 'План запуска (Timeline)', 'launch')}
           >
             Детальный план
@@ -74,9 +75,9 @@ export const LaunchSection: React.FC = () => {
         </div>
 
         {/* Right Steps Card */}
-        <div className="bg-white rounded-3xl p-6 md:p-10 border border-v-green-deep/5 shadow-sm">
-          <h3 className="text-[11px] font-bold uppercase tracking-widest text-[#5E625C] mb-8">Шаги запуска</h3>
-          <div className="space-y-4 md:space-y-6">
+        <div className="bg-white rounded-[2rem] p-8 md:p-12 border border-v-grey-light shadow-card">
+          <h3 className="text-xs font-bold uppercase tracking-widest text-v-muted mb-10">Шаги запуска</h3>
+          <div className="space-y-6 md:space-y-8">
             {steps.map((step, idx) => (
               <motion.div 
                 key={idx}
@@ -84,14 +85,14 @@ export const LaunchSection: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className="flex gap-4 md:gap-6 items-start"
+                className="flex gap-6 items-start group"
               >
-                <span className="text-v-accent font-bold text-lg md:text-xl w-6 shrink-0 mt-0.5">
+                <div className="text-v-red font-bold text-2xl w-8 shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
                   {String(idx + 1).padStart(2, '0')}
-                </span>
-                <div className="flex-1 pb-4 md:pb-6 border-b border-black/5">
-                  <h4 className="text-sm font-bold text-v-charcoal mb-1">{step.title}</h4>
-                  <p className="text-[11px] text-[#5E625C] font-medium leading-relaxed">{step.desc}</p>
+                </div>
+                <div className="flex-1 pb-6 md:pb-8 border-b border-v-grey-light/60 group-last:border-0 group-last:pb-0">
+                  <h4 className="text-lg font-bold text-v-text mb-2">{step.title}</h4>
+                  <p className="text-sm text-v-muted font-medium leading-relaxed">{step.desc}</p>
                 </div>
               </motion.div>
             ))}

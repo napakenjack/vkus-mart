@@ -28,7 +28,14 @@ export const Section: React.FC<SectionProps> = ({
       )}
       {...props}
     >
-      <div className={cn("max-w-[1280px] mx-auto px-5 md:px-8", containerClass)}>
+      {/* 
+        Место для фонового SVG/изображения 
+        Добавьте тег <img> с классом "w-full h-full object-cover opacity-5"
+        или другой фоновый элемент сюда.
+      */}
+      <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true" id="section-background-placeholder"></div>
+
+      <div className={cn("relative z-10 max-w-[1280px] mx-auto px-5 md:px-8", containerClass)}>
         {children}
       </div>
     </motion.section>

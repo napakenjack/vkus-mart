@@ -81,35 +81,38 @@ export const ContactSection: React.FC = () => {
 
   return (
     <Section id="contact" className="bg-v-cream pb-24">
-      <div className="max-w-[1024px] mx-auto bg-white rounded-3xl p-8 md:p-12 border-2 border-v-green-deep shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+      <div className="max-w-[1024px] mx-auto bg-white rounded-[2.5rem] p-8 md:p-12 border-2 border-v-burgundy shadow-card flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
         
-        <div className="w-full md:w-5/12">
-          <h2 className="text-3xl md:text-5xl font-black text-v-charcoal mb-4 tracking-tighter leading-none">
+        {/* Subtle background decoration */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-v-red/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none"></div>
+
+        <div className="w-full md:w-5/12 relative z-10">
+          <h2 className="text-3xl md:text-5xl font-bold text-v-text mb-4 tracking-tight leading-none">
             Готовы начать?
           </h2>
-          <p className="text-xs md:text-sm text-v-text-muted font-medium">
+          <p className="text-sm md:text-base text-v-muted font-medium">
             Оставьте заявку и получите детальный финансовый расчет для вашего города, консультацию по форматам и план запуска.
           </p>
-          <div className="mt-8 pt-8 border-t border-black/5 hidden md:block">
-            <div className="text-[10px] font-bold text-[#5E625C] uppercase tracking-widest mb-1">Остались вопросы?</div>
-            <a href="tel:+77000000000" className="text-xl font-bold text-v-green-deep hover:text-v-green-fresh transition-colors">
+          <div className="mt-8 pt-8 border-t border-v-grey-light hidden md:block">
+            <div className="text-[10px] font-bold text-v-muted uppercase tracking-widest mb-1">Остались вопросы?</div>
+            <a href="tel:+77000000000" className="text-xl font-bold text-v-burgundy hover:text-v-red transition-colors">
               +7 (700) 000-00-00
             </a>
           </div>
         </div>
 
-        <div className="w-full md:w-7/12">
+        <div className="w-full md:w-7/12 relative z-10">
           {success ? (
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="bg-v-sand/30 p-8 rounded-2xl text-center border border-v-green-deep/10"
+              className="bg-v-ivory p-8 rounded-2xl text-center border border-v-gold/20"
             >
-              <div className="w-12 h-12 bg-v-green-deep text-v-accent rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-12 h-12 bg-v-red text-white rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle2 size={24} />
               </div>
-              <h3 className="text-xl font-bold text-v-charcoal mb-2">Заявка отправлена</h3>
-              <p className="text-xs text-v-text-muted font-medium">Мы свяжемся с вами в течение 24 часов.</p>
+              <h3 className="text-xl font-bold text-v-text mb-2">Заявка отправлена</h3>
+              <p className="text-sm text-v-muted font-medium">Мы свяжемся с вами в течение 24 часов.</p>
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -120,7 +123,7 @@ export const ContactSection: React.FC = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full bg-[#F7F3EA] border-none rounded-xl px-5 py-4 text-xs font-bold focus:ring-2 focus:ring-[#163B2B] focus:outline-none transition-all placeholder:text-[#5E625C]/60"
+                    className="w-full bg-v-ivory border-none rounded-xl px-5 py-4 text-sm font-bold focus:ring-2 focus:ring-v-red focus:outline-none transition-all placeholder:text-v-muted"
                     placeholder="Ваше имя *"
                     required
                   />
@@ -129,7 +132,7 @@ export const ContactSection: React.FC = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full bg-[#F7F3EA] border-none rounded-xl px-5 py-4 text-xs font-bold focus:ring-2 focus:ring-[#163B2B] focus:outline-none transition-all placeholder:text-[#5E625C]/60"
+                    className="w-full bg-v-ivory border-none rounded-xl px-5 py-4 text-sm font-bold focus:ring-2 focus:ring-v-red focus:outline-none transition-all placeholder:text-v-muted"
                     placeholder="+7 (___) ___-__-__ *"
                     required
                   />
@@ -138,7 +141,7 @@ export const ContactSection: React.FC = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full bg-[#F7F3EA] border-none rounded-xl px-5 py-4 text-xs font-bold focus:ring-2 focus:ring-[#163B2B] focus:outline-none transition-all placeholder:text-[#5E625C]/60"
+                    className="w-full bg-v-ivory border-none rounded-xl px-5 py-4 text-sm font-bold focus:ring-2 focus:ring-v-red focus:outline-none transition-all placeholder:text-v-muted"
                     placeholder="E-mail (необязательно)"
                   />
                 </div>
@@ -147,7 +150,7 @@ export const ContactSection: React.FC = () => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="bg-[#F2B84B] text-[#151515] px-8 py-4 sm:h-full rounded-xl font-bold uppercase text-[11px] tracking-widest shadow-lg hover:shadow-xl active:scale-95 transition-all text-center flex flex-col justify-center items-center h-16 sm:h-auto"
+                    className="bg-v-burgundy text-white px-8 py-4 sm:h-full rounded-xl font-bold uppercase text-[11px] tracking-widest shadow-lg hover:shadow-xl hover:bg-v-red active:scale-95 transition-all text-center flex flex-col justify-center items-center h-16 sm:h-auto"
                   >
                     {loading ? 'Отправка...' : <span>Стать <br className="hidden sm:block"/> партнером</span>}
                   </button>
@@ -155,7 +158,7 @@ export const ContactSection: React.FC = () => {
               </div>
 
               {error && (
-                <div className="flex items-start gap-2 p-3 bg-red-50 text-red-700 rounded-xl text-xs font-bold">
+                <div className="flex items-start gap-2 p-3 bg-red-50 text-red-700 rounded-xl text-sm font-bold">
                   <AlertCircle size={16} className="shrink-0" />
                   <p>{error}</p>
                 </div>
@@ -168,12 +171,12 @@ export const ContactSection: React.FC = () => {
                   name="consent"
                   checked={formData.consent}
                   onChange={handleChange}
-                  className="mt-0.5 w-4 h-4 text-[#163B2B] rounded border-[#163B2B]/20 focus:ring-[#163B2B]"
+                  className="mt-0.5 w-4 h-4 text-v-red rounded border-v-grey-light focus:ring-v-red"
                   required
                 />
-                <label htmlFor="contact_consent" className="text-[10px] text-[#5E625C] cursor-pointer leading-tight font-medium">
+                <label htmlFor="contact_consent" className="text-xs text-v-muted cursor-pointer leading-tight font-medium">
                   Даю согласие в соответствии с{' '}
-                  <a href="#privacy" onClick={(e) => { e.preventDefault(); window.location.hash = '#privacy'; window.scrollTo(0,0); }} className="text-[#163B2B] underline hover:text-[#38A169] transition-colors">
+                  <a href="#privacy" onClick={(e) => { e.preventDefault(); window.location.hash = '#privacy'; window.scrollTo(0,0); }} className="text-v-burgundy underline hover:text-v-red transition-colors">
                     Политикой конфиденциальности
                   </a>
                 </label>

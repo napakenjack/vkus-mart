@@ -44,52 +44,55 @@ export const SystemSection: React.FC = () => {
   ];
 
   return (
-    <Section id="system" className="bg-white">
-      <div className="max-w-[1280px] mx-auto bg-v-sand rounded-3xl p-8 md:p-14 overflow-hidden relative border border-v-green-deep/5">
-        <div className="absolute -top-32 -right-32 w-96 h-96 bg-white/20 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-v-accent/10 rounded-full blur-3xl"></div>
-
+    <Section id="system" className="bg-v-cream">
+      <div className="max-w-[1280px] mx-auto overflow-hidden relative">
         <div className="relative z-10 max-w-2xl mb-12">
-          <h2 className="text-3xl md:text-5xl font-black text-v-charcoal mb-4 tracking-tighter leading-none">
+          <h2 className="text-4xl md:text-5xl font-bold text-v-text mb-4 tracking-tight leading-tight">
             Готовая бизнес-система <br/>под ключ
           </h2>
-          <p className="text-xs md:text-sm text-v-charcoal/70 font-medium text-pretty leading-relaxed max-w-sm">
+          <p className="text-sm md:text-base text-v-muted font-medium text-pretty leading-relaxed max-w-lg">
             Мы берем на себя IT, закупки и обучение персонала. Вы управляете прибылью.
           </p>
         </div>
 
-        <div className="relative z-10 grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        <div className="relative z-10 grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {systems.map((sys, idx) => (
             <motion.div 
               key={idx}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className="bg-white/40 backdrop-blur-sm rounded-2xl p-5 border border-white/50"
+              className="bg-white rounded-[2rem] p-8 border border-v-grey-light shadow-card relative hover:shadow-[0_20px_40px_rgba(128,1,31,0.06)] transition-all"
             >
-              <div className="flex flex-col gap-3">
-                <span className="px-3 py-1 bg-white w-max rounded-full text-[10px] uppercase tracking-widest font-bold shadow-sm text-v-text-muted">
-                  Система {idx + 1}
-                </span>
-                <h3 className="font-bold text-v-charcoal text-sm leading-tight">{sys.title}</h3>
-                <p className="text-v-text-muted text-[11px] leading-relaxed">
-                  {sys.text}
-                </p>
+              <div className="flex flex-col gap-5">
+                <div className="w-10 h-10 bg-v-burgundy/5 text-v-burgundy rounded-full flex items-center justify-center font-bold text-sm border border-v-burgundy/10">
+                  {idx + 1}
+                </div>
+                <div>
+                  <h3 className="font-bold text-v-red text-base leading-tight mb-3">{sys.title}</h3>
+                  <p className="text-v-muted text-sm leading-relaxed font-medium">
+                    {sys.text}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        <div className="relative z-10 bg-white rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm border border-black/5">
+        <div className="relative z-10 bg-white rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-card border border-v-grey-light">
           <div className="text-left">
-            <p className="text-base md:text-lg font-bold text-v-charcoal leading-tight">
-              Вы подключаетесь к уже работающей системе
-            </p>
+            <div className="flex items-center gap-3">
+              <span className="w-3 h-3 rounded-full bg-v-red block"></span>
+              <p className="text-xl md:text-2xl font-bold text-v-text leading-tight">
+                Вы подключаетесь к уже работающей системе
+              </p>
+            </div>
           </div>
           <div className="shrink-0 w-full md:w-auto">
             <CTAButton 
-              variant="primary" 
+              variant="outline" 
+              size="lg"
               onClick={() => openModal('presentation', 'Презентация (System)', 'system')}
               fullWidth
             >

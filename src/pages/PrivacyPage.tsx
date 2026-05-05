@@ -13,19 +13,19 @@ export const PrivacyPage: React.FC = () => {
       
       <main className="flex-grow bg-v-cream py-32">
         <div className="max-w-3xl mx-auto px-5 md:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-v-green-deep mb-10 tracking-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-v-burgundy mb-10 tracking-tight">
             Политика конфиденциальности
           </h1>
           
-          <div className="prose prose-lg prose-slate max-w-none text-v-charcoal/80 space-y-6">
+          <div className="prose prose-lg prose-slate max-w-none text-v-text/80 space-y-6">
             <section>
-              <h2 className="text-2xl font-bold text-v-charcoal mb-4">1. Общие положения</h2>
+              <h2 className="text-2xl font-bold text-v-text mb-4">1. Общие положения</h2>
               <p>Настоящая политика конфиденциальности определяет порядок обработки персональных данных и меры по обеспечению безопасности персональных данных, предпринимаемые брендом ВКУСМАРТ (далее — Оператор).</p>
               <p>Цель настоящей политики — обеспечение защиты прав и свобод человека и гражданина при обработке его персональных данных, в том числе защиты прав на неприкосновенность частной жизни, личную и семейную тайну.</p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-v-charcoal mb-4">2. Какие данные собираются</h2>
+              <h2 className="text-2xl font-bold text-v-text mb-4">2. Какие данные собираются</h2>
               <p>Оператор может обрабатывать следующие персональные данные Пользователя:</p>
               <ul className="list-disc pl-5 space-y-2 mt-2">
                 <li>ФИО (имя);</li>
@@ -36,27 +36,27 @@ export const PrivacyPage: React.FC = () => {
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-v-charcoal mb-4">3. Цель обработки данных</h2>
+              <h2 className="text-2xl font-bold text-v-text mb-4">3. Цель обработки данных</h2>
               <p>Цель обработки персональных данных Пользователя — информирование Пользователя посредством отправки телефонных звонков и электронных писем, предоставление доступа к презентационным материалам, расчетам и другим актуальным материалам франшизы ВКУСМАРТ.</p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-v-charcoal mb-4">4. Передача данных</h2>
+              <h2 className="text-2xl font-bold text-v-text mb-4">4. Передача данных</h2>
               <p>Безопасность персональных данных, которые обрабатываются Оператором, обеспечивается путем реализации правовых, организационных и технических мер, необходимых для выполнения в полном объеме требований действующего законодательства в области защиты персональных данных. Данные не передаются третьим лицам за исключением случаев, предусмотренных законодательством, или при использовании защищенных CRM-систем (например, amoCRM) для обработки заявок.</p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-v-charcoal mb-4">5. Хранение и защита данных</h2>
+              <h2 className="text-2xl font-bold text-v-text mb-4">5. Хранение и защита данных</h2>
               <p>Данные хранятся на защищенных серверах с ограниченным доступом. Срок хранения определяется временем, необходимым для выполнения обязательств перед Пользователем, если иное не предусмотрено законом.</p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-v-charcoal mb-4">6. Согласие пользователя</h2>
+              <h2 className="text-2xl font-bold text-v-text mb-4">6. Согласие пользователя</h2>
               <p>Заполняя соответствующие формы обратной связи на сайте, Пользователь выражает свое согласие с данной Политикой конфиденциальности. Данное согласие дается бессрочно и может быть отозвано путем отправки запроса Оператору.</p>
             </section>
 
             <section>
-              <h2 className="text-2xl font-bold text-v-charcoal mb-4">7. Контакты</h2>
+              <h2 className="text-2xl font-bold text-v-text mb-4">7. Контакты</h2>
               <p>Пользователь может получить любые разъяснения по интересующим вопросам, касающимся обработки его персональных данных, обратившись к Оператору по электронной почте: franchise@vkusmart.kz.</p>
             </section>
           </div>

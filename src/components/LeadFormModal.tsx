@@ -67,10 +67,6 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({
     };
 
     try {
-      // ---------------------------------------------------------
-      // NOTE: This is a placeholder for future amoCRM integration.
-      // Do not expose secrets here. Use env vars or serverless functions.
-      // ---------------------------------------------------------
       const webhookUrl = (import.meta as any).env.VITE_CRM_WEBHOOK_URL || '';
       
       console.log('--- LEAD DATA (Prepared for amoCRM) ---', payload);
@@ -82,13 +78,11 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({
            body: JSON.stringify(payload),
          });
       } else {
-        // Simulate network delay for demo
         await new Promise(resolve => setTimeout(resolve, 1000));
       }
 
       setSuccess(true);
       
-      // Optionally reset form after 3 seconds and close
       setTimeout(() => {
         setSuccess(false);
         setFormData({ name: '', phone: '', email: '', consent: true });
@@ -112,7 +106,7 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-v-charcoal/60 backdrop-blur-sm"
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm"
           onClick={onClose}
         />
         
@@ -121,11 +115,11 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ type: "spring", duration: 0.5 }}
-          className="relative w-full max-w-lg bg-v-cream rounded-2xl shadow-2xl overflow-hidden z-10 flex flex-col max-h-[90vh]"
+          className="relative w-full max-w-lg bg-v-cream rounded-[2rem] shadow-2xl overflow-hidden z-10 flex flex-col max-h-[90vh]"
         >
           <button 
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 text-v-text-muted hover:text-v-charcoal bg-v-sand/30 hover:bg-v-sand/80 rounded-full transition-colors z-20"
+            className="absolute top-4 right-4 p-2 text-v-muted hover:text-v-text bg-v-grey-light/50 hover:bg-v-grey-light rounded-full transition-colors z-20"
             aria-label="Закрыть"
           >
             <X size={20} />
@@ -134,27 +128,27 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({
           <div className="p-8 md:p-10 overflow-y-auto">
             {success ? (
               <div className="flex flex-col items-center justify-center text-center py-10">
-                <div className="w-16 h-16 bg-v-green-fresh/10 text-v-green-fresh rounded-full flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-v-red/10 text-v-red rounded-full flex items-center justify-center mb-6 border border-v-red/20 shadow-sm">
                   <CheckCircle2 size={32} />
                 </div>
-                <h3 className="text-2xl font-bold text-v-green-deep mb-3">Спасибо! Заявка отправлена.</h3>
-                <p className="text-v-text-muted">Мы свяжемся с вами в течение 24 часов.</p>
+                <h3 className="text-2xl font-bold text-v-text mb-3">Спасибо! Заявка отправлена.</h3>
+                <p className="text-v-muted">Мы свяжемся с вами в течение 24 часов.</p>
               </div>
             ) : (
               <>
                 <div className="mb-8">
-                  <h3 className="text-2xl md:text-3xl font-bold text-v-green-deep tracking-tight mb-3 pr-8 text-balance">
+                  <h3 className="text-2xl md:text-3xl font-bold text-v-burgundy tracking-tight mb-3 pr-8 text-balance">
                     {details.title}
                   </h3>
-                  <p className="text-v-text-muted text-pretty">
+                  <p className="text-v-muted text-pretty">
                     {details.subtitle}
                   </p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-v-charcoal mb-1.5 ml-1">
-                      Имя <span className="text-v-accent">*</span>
+                    <label htmlFor="name" className="block text-sm font-semibold text-v-text mb-1.5 ml-1">
+                      Имя <span className="text-v-red">*</span>
                     </label>
                     <input
                       type="text"
@@ -162,15 +156,15 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-5 py-3.5 bg-white border border-v-sand rounded-xl focus:outline-none focus:ring-2 focus:ring-v-green-fresh/50 focus:border-v-green-fresh transition-all"
+                      className="w-full px-5 py-3.5 bg-white border border-v-grey-light rounded-xl focus:outline-none focus:ring-2 focus:ring-v-red/50 focus:border-v-red transition-all shadow-sm"
                       placeholder="Иван Иванов"
                       required
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-v-charcoal mb-1.5 ml-1">
-                      Телефон <span className="text-v-accent">*</span>
+                    <label htmlFor="phone" className="block text-sm font-semibold text-v-text mb-1.5 ml-1">
+                      Телефон <span className="text-v-red">*</span>
                     </label>
                     <input
                       type="tel"
@@ -178,14 +172,14 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-5 py-3.5 bg-white border border-v-sand rounded-xl focus:outline-none focus:ring-2 focus:ring-v-green-fresh/50 focus:border-v-green-fresh transition-all"
+                      className="w-full px-5 py-3.5 bg-white border border-v-grey-light rounded-xl focus:outline-none focus:ring-2 focus:ring-v-red/50 focus:border-v-red transition-all shadow-sm"
                       placeholder="+7 (999) 000-00-00"
                       required
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-v-charcoal mb-1.5 ml-1">
+                    <label htmlFor="email" className="block text-sm font-semibold text-v-text mb-1.5 ml-1">
                       Email
                     </label>
                     <input
@@ -194,7 +188,7 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-5 py-3.5 bg-white border border-v-sand rounded-xl focus:outline-none focus:ring-2 focus:ring-v-green-fresh/50 focus:border-v-green-fresh transition-all"
+                      className="w-full px-5 py-3.5 bg-white border border-v-grey-light rounded-xl focus:outline-none focus:ring-2 focus:ring-v-red/50 focus:border-v-red transition-all shadow-sm"
                       placeholder="ivan@example.com"
                     />
                   </div>
@@ -216,7 +210,7 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({
                     >
                       {loading ? 'Отправка...' : 'Стать партнёром по франшизе'}
                     </CTAButton>
-                    <p className="text-center text-xs text-v-text-muted mt-3">
+                    <p className="text-center text-xs text-v-muted mt-3">
                       Свяжемся с вами в течение 24 часов
                     </p>
                   </div>
@@ -228,12 +222,12 @@ export const LeadFormModal: React.FC<LeadFormModalProps> = ({
                       name="consent"
                       checked={formData.consent}
                       onChange={handleChange}
-                      className="mt-1 w-4 h-4 text-v-green-fresh rounded border-v-sand focus:ring-v-green-fresh"
+                      className="mt-1 w-4 h-4 text-v-red rounded border-v-grey-light focus:ring-v-red"
                       required
                     />
-                    <label htmlFor="consent" className="text-xs text-v-text-muted cursor-pointer leading-tight">
+                    <label htmlFor="consent" className="text-xs text-v-muted cursor-pointer leading-tight">
                       Даю согласие на обработку персональных данных в соответствии с{' '}
-                      <a href="#privacy" onClick={onClose} className="text-v-green-deep underline hover:text-v-green-fresh transition-colors">
+                      <a href="#privacy" onClick={onClose} className="text-v-burgundy underline hover:text-v-red transition-colors">
                         Политикой конфиденциальности
                       </a>
                     </label>
